@@ -4,6 +4,6 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Aplikasi Penginputan Data Mahasiswa' });
+  res.render('index', { title: 'Contoh Socket.io + Express' });
 };
 

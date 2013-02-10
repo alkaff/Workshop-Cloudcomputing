@@ -7,20 +7,30 @@ body
 	text-align:center;
 }
 
-#form_container
+#table_container
 {
 	background:#fff;
 	margin:0 auto;
 	text-align:left;
-	width:640px;
+	width:800px;
 }
+
+#form_container
+{
+	table-layout:center;
+	background:#fff;
+	margin:0 auto;
+	text-align:left;
+	width:800px;
+}
+
 
 #top
 {
 	display:block;
 	height:10px;
 	margin:10px auto 0;
-	width:650px;
+	width:780px;
 }
 
 #footer
@@ -29,15 +39,15 @@ body
 	clear:both;
 	color:#999999;
 	text-align:center;
-	width:640px;
+	width:790px;
 	padding-bottom: 15px;
-	font-size: 85%;
+	font-size: 100%;
 }
 
 #footer a{
 	color:#999999;
 	text-decoration: none;
-	border-bottom: 1px dotted #999999;
+	border-bottom: 1px #999999;
 }
 
 #bottom
@@ -60,7 +70,6 @@ h1
 	background-color:#444444;
 	margin:0;
 	min-height:0;
-	padding:0;
 	text-decoration:none;
 	text-indent:-8000px;
 	
@@ -68,7 +77,6 @@ h1
 
 h1 a
 {
-	
 	display:block;
 	height:100%;
 	min-height:40px;
@@ -84,6 +92,19 @@ img
 
 
 /**** Form Section ****/
+#formPost
+{
+	width:70%;
+	margin-left:auto;
+}
+.hidden
+{
+	display:none;
+	position:center;
+	width:500px;
+	text-align:center;
+	width:800px;
+}
 .appnitro
 {
 	font-family:Lucida Grande, Tahoma, Arial, Verdana, sans-serif;
@@ -106,10 +127,9 @@ form ul
 
 form li
 {
-	display:block;
 	margin:0;
 	padding:4px 5px 2px 9px;
-	position:relative;
+	position:center;
 }
 
 form li:after
@@ -243,7 +263,7 @@ form li .datepicker
 
 .form_description h2
 {
-	clear:left;
+	clear:center;
 	font-size:160%;
 	font-weight:400;
 	margin:0 0 3px;
@@ -268,7 +288,7 @@ form li.section_break
 	padding-bottom:0;
 	padding-left:9px;
 	padding-top:13px;
-	width:97% !important;
+	width:100% !important;
 }
 
 form ul li.first
@@ -289,8 +309,70 @@ form .section_break h3
 form .section_break p
 {
 	font-size:85%;
-
 	margin:0 0 10px;
+}
+
+/**** Table Section ****/
+.inside
+{
+	border-style:solid;
+	border-color:white;
+	border-collapse:collapse;
+}
+
+.table_description
+{
+	border-bottom:1px dotted #ccc;
+	clear:both;
+	display:inline-block;
+	margin:0 0 1em;
+}
+
+.table_description[class]
+{
+	display:block;
+}
+
+.table_description h2
+{
+	clear:center;
+	font-size:160%;
+	font-weight:400;
+	margin:0 0 3px;
+}
+
+.table_description p
+{
+	font-size:95%;
+	line-height:130%;
+	margin:0 0 12px;
+}
+
+#customers
+{
+font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+width:100%;
+border-collapse:collapse;
+}
+#customers td, #customers th 
+{
+font-size:1em;
+border:1px solid #343434;
+padding:3px 7px 2px 7px;
+}
+#customers th 
+{
+font-size:1.2em;
+text-align:left;
+padding-top:5px;
+padding-bottom:4px;
+background-color:#444444;
+color:#ffffff;
+}
+#customers tr.alt td 
+{
+color:#000000;
+background-color:#333333;
 }
 
 /**** Buttons ****/
@@ -313,7 +395,7 @@ label.description
 	border:none;
 	color:#222;
 	display:block;
-	font-size:95%;
+	font-size:100%;
 	font-weight:700;
 	line-height:150%;
 	padding:0 0 1px;
@@ -437,12 +519,12 @@ select.small
 
 input.medium
 {
-	width:50%;
+	width:40%;
 }
 
 select.medium
 {
-	width:50%;
+	width:40%;
 }
 
 input.large
@@ -552,7 +634,7 @@ form .guidelines
 	padding:8px 10px 9px;
 	position:absolute;
 	top:0;
-	visibility:hidden;
+	visibility:visible;
 	width:42%;
 	z-index:1000;
 }
@@ -663,7 +745,6 @@ ul.password{
 .embed form.appnitro
 {
 	margin:0px 0px 0;
-	
 }
 
 
@@ -861,4 +942,3 @@ border-bottom: 1px solid #999;
 background: #dedede;
 font-weight: bold;
 }
-

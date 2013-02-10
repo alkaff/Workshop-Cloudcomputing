@@ -1,38 +1,92 @@
 !!! transitional
 html
 head
-  meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
     title Penginputan Data Mahasiswa
     link(rel='stylesheet', type='text/css', href='stylesheets/view.css', media='all')
     script(type='text/javascript', src='javascripts/view.js')
     script(type='text/javascript', src='javascripts/calendar.js')
+    script(type='text/javascript', src='javascripts/jquery.js')
+    script(type='text/javascript', src='javascripts/socket.io.js')
+    script(type='text/javascript', src='javascripts/action.js')
+      
 body(id="main_body")
     img#top(src='images/top.png', alt='')
-    #form_container
+    #table_container
       h1
         a Penginputan Data Mahasiswa
-      form#form_569466.appnitro(method='post', action='')
-        .form_description
-          p Selamat Datang di Aplikasi Penginputan Data Mahasiswa
+      div
+      form#form_569466.appnitro(method='', action='')
+        .table_description
+          h2 Data Mahasiswa
+          p Berikut ini adalah data mahasiswa
         ul
-          #li_2
+          li
+            table#customers(jumbar='2')
+                tr
+                  th Nama
+                  th Tanggal Lahir
+                  th Alamat
+                  th Jenis Kelamin
+                  th Jurusan
+                  th 
+                tr#1
+                  td#nama1 Dzaky
+                  td
+                   table.inside
+                    tr
+                     td#tgl1 28  
+                     td#bln1 April 
+                     td#thn1 1992
+                  td#almt1 Kebumen
+                  td#kel1 Laki-Laki
+                  td#jur1 Teknik Informatika
+                  td 
+                   input#1.bEdit.button(type='button', value='Ubah')
+                   input#1.bDel.button(type='button', value='Hapus')
+                tr#2
+                  td#nama2 Elise
+                  td
+                   table.inside
+                    tr
+                     td#tgl2 23  
+                     td#bln2 Mei 
+                     td#thn2 1991
+                  td#almt2 Kebumen
+                  td#kel2 Laki-Laki
+                  td#jur2 Teknik Informatika (S1)
+                  td 
+                   input#2.bEdit.button(type='button', value='Ubah')
+                   input#2.bDel.button(type='button', value='Hapus')
+          li.buttons
+             input#add.bAdd.button(type='button', name='reset', value='Tambah Data')
+    #form_container.hidden
+      h1
+        a Penginputan Data Mahasiswa
+      div
+      ul
+       form#form_569466.appnitro(method='', action='')
+        .form_description
+          h2 Penginputan Data Mahasiswa
+          p Silahkan Inputkan Data Anda di bawah : 
+        ul#formPost
+          li#li_2
             label.description(for='element_2') Nama 
             div
               input#element_2.element.text.medium(name='element_2', type='text', maxlength='255', value='')
-          #li_5
+          li#li_5
             label.description(for='element_5') Tanggal Lahir 
             div
             span
               input#element_5_1.element.text(name='element_5_1', size='2', maxlength='2', value='', type='text')
               | /
-              label(for='element_5_1') DD
+              label(for='element_5_1') Tanggal
             span
               input#element_5_2.element.text(name='element_5_2', size='2', maxlength='2', value='', type='text')
               | /
-              label(for='element_5_2') MM
+              label(for='element_5_2') Bulan
             span
               input#element_5_3.element.text(name='element_5_3', size='4', maxlength='4', value='', type='text')
-              label(for='element_5_3') YYYY
+              label(for='element_5_3') Tahun
             span#calendar_5
               img#cal_img_5.datepicker(src='images/calendar.gif', alt='Pick a date.')
             script(type='text/javascript')
@@ -44,28 +98,38 @@ body(id="main_body")
               ifFormat	 : "%B %e, %Y",
               onSelect	 : selectEuropeDate
               });
-          #li_3
+          li#li_3
             label.description(for='element_3') Alamat 
             div
-              textarea#element_3.element.text.medium(rows='3', cols='40')
-          #li_4
+              input#element_3.element.text.medium(name='element_3', type='text', maxlength='255', value='')
+          li#li_4
             label.description(for='element_4') Jenis Kelamin 
             span
-              input#element_4_1.element.radio(name='element_4', type='radio', value='1')
+              select#element_6.element.select.small(name='element_6')
+                option(value='', selected='selected')
+                option(value='Teknik Informatika (S1)') Teknik Informatika (S1)
+                option(value='Sistem Informasi (S1)') Sistem Informasi (S1)
+                option(value='Manajemen Informatika (D3)') Manajemen Informatika (D3)
+              
+              /*input#element_4_1.element.radio(name='element_4', type='radio', value='1' )
               label.choice(for='element_4_1') Laki-laki
-              input#element_4_2.element.radio(name='element_4', type='radio', value='2')
-              label.choice(for='element_4_2') Perempuan
-          #li_6
+              input#element_4_2.element.radio(name='element_4', type='radio', value='2' )
+              label.choice(for='element_4_2') Perempuan*/
+          li#li_6
             label.description(for='element_6') Jurusan yang dipilih 
             div
               select#element_6.element.select.medium(name='element_6')
                 option(value='', selected='selected')
-                option(value='1') Teknik Informatika (S1)
-                option(value='2') Sistem Informasi (S1)
-                option(value='3') Manajemen Informatika (D3)
-          buttons
+                option(value='Teknik Informatika (S1)') Teknik Informatika (S1)
+                option(value='Sistem Informasi (S1)') Sistem Informasi (S1)
+                option(value='Manajemen Informatika (D3)') Manajemen Informatika (D3)
+          li.buttons
             input(type='hidden', name='form_id', value='569466')
-            input#saveForm.button_text(type='submit', name='submit', value='Simpan')
+            input#save.button(type='button', name='save', value='Simpan', x='')
+            input#cancel.button(type='button', name='cancel', value='Batal')
+      
+      
       #footer
-        | Created by Dzaky Alkaff
+        | Created by 
+        a(href='http://www.facebook.com/KaitoKurozaki') Dzaky Alkaff
     img#bottom(src='images/bottom.png', alt='')
